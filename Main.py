@@ -14,6 +14,7 @@ import keyFile
 import openai
 import weather
 import requests
+import pywhatkit
 
 
 class Shabnam:
