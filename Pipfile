@@ -13,10 +13,11 @@ psutil = "*"
 ytmusicapi = "*"
 wolframalpha = "*"
 pyautogui = "*"
-openai = "*"
+openai = "==0.28"
 weather-api = "*"
 bs4 = "*"
 beautifulsoup4 = "*"
+pywhatkit = "*"
 
 [dev-packages]
 

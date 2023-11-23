@@ -54,8 +54,42 @@ class Shabnam:
                     audio = self.recognizer.listen(source, timeout=5)
                     command = self.recognizer.recognize_google(audio).lower()
                     print("You said:", command)
-                    if "hello" in command or "hi" in command:
+                    if "hello" in command:
                         self.talk("Hi there! How can I help you?")
+                    elif (
+                        "how are you" in command
+                        or "how are you doing" in command
+                        or "how r u" in command
+                    ):
+                        self.talk("I'm doing great! How about you?")
+                        audio_how = self.recognizer.listen(source, timeout=5)
+                        command_how = self.recognizer.recognize_google(
+                            audio_how
+                        ).lower()
+                        print("You said:", command_how)
+                        if "i am good" in command_how or "i am fine" in command_how:
+                            self.talk("That's great to hear!")
+                        elif (
+                            "i am not good" in command_how
+                            or "i am not fine" in command_how
+                        ):
+                            self.talk("I'm sorry to hear that.")
+                        else:
+                            self.talk("I'm sorry, I didn't understand that.")
+                    elif "what's your name" in command:
+                        self.talk("My name is Shabnam.")
+                    elif "what can you do" in command:
+                        self.talk(
+                            "I can do a lot of things. You can ask me to open apps, search the web, play music, and more."
+                        )
+                    elif "who made you" in command:
+                        self.talk("I was made by Gagan Raj. He is my creators.")
+                    elif "who are you" in command:
+                        self.talk("I am Shabnam, a virtual assistant.")
+                    elif "what is your purpose" in command:
+                        self.talk(
+                            "I was created to help you with your daily tasks and make your life easier."
+                        )
                     elif "goodbye" in command or "bye" in command:
                         self.talk("Goodbye! Have a great day!")
                         exit()
